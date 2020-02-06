@@ -1,0 +1,92 @@
+[
+  {
+    "id_cliente": 1,
+    "pagamento": "179.08",
+    "data": "18/05/2019",
+    "horario": "00:17:11"
+  },
+  {
+    "id_cliente": 2,
+    "pagamento": "131.17",
+    "data": "02/03/2019",
+    "horario": "13:59:35"
+  },
+  {
+    "id_cliente": 3,
+    "pagamento": "157.90",
+    "data": "18/05/2019",
+    "horario": "19:16:53"
+  },
+  {
+    "id_cliente": 4,
+    "pagamento": "18.69",
+    "data": "19/02/2019",
+    "horario": "04:45:15"
+  },
+  {
+    "id_cliente": 5,
+    "pagamento": "166.99",
+    "data": "11/09/2019",
+    "horario": "00:23:24"
+  },
+  {
+    "id_cliente": 6,
+    "pagamento": "80.78",
+    "data": "30/12/2019",
+    "horario": "02:24:16"
+  },
+  {
+    "id_cliente": 7,
+    "pagamento": "23.98",
+    "data": "18/08/2019",
+    "horario": "05:30:45"
+  },
+  {
+    "id_cliente": 8,
+    "pagamento": "198.25",
+    "data": "11/02/2019",
+    "horario": "01:41:00"
+  },
+  {
+    "id_cliente": 9,
+    "pagamento": "76.63",
+    "data": "25/03/2019",
+    "horario": "00:10:48"
+  },
+  {
+    "id_cliente": 10,
+    "pagamento": "55.99",
+    "data": "11/02/2019",
+    "horario": "01:41:48"
+  },
+  {
+    "id_cliente": 11,
+    "pagamento": "166.15",
+    "data": "25/06/2019",
+    "horario": "21:56:26"
+  },
+  {
+    "id_cliente": 12,
+    "pagamento": "15.07",
+    "data": "13/01/2020",
+    "horario": "04:24:31"
+  },
+  {
+    "id_cliente": 13,
+    "pagamento": "157.14",
+    "data": "04/08/2019",
+    "horario": "08:47:38"
+  },
+  {
+    "id_cliente": 14,
+    "pagamento": "133.44",
+    "data": "20/05/2019",
+    "horario": "17:50:55"
+  },
+  {
+    "id_cliente": 4,
+    "pagamento": "119.02",
+    "data": "25/03/2019",
+    "horario": "12:20:38"
+  }
+]
