@@ -19,8 +19,8 @@ final class JsonProcessImpl extends FileProcessImpl {
 
     private static final Gson GSON =
             new GsonBuilder()
-                    .registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (jsonElement, type, jsonDeserializationContext) -> DateUtil.localDateStringToLocalDate(jsonElement.toString()))
-                    .registerTypeAdapter(LocalTime.class, (JsonDeserializer<LocalTime>) (jsonElement, type, jsonDeserializationContext) -> DateUtil.localTimeStringToLocalDate(jsonElement.toString()))
+                    .registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (jsonElement, type, jsonDeserializationContext) -> DateUtil.rawStringToLocalDate(jsonElement.toString()))
+                    .registerTypeAdapter(LocalTime.class, (JsonDeserializer<LocalTime>) (jsonElement, type, jsonDeserializationContext) -> DateUtil.rawStringToLocalTime(jsonElement.toString()))
                     .create();
 
     protected JsonProcessImpl(final Payments payments) {
@@ -50,7 +50,7 @@ final class JsonProcessImpl extends FileProcessImpl {
         }
 
         PaymentAdapter build() {
-            return new PaymentAdapter(clientId, value, DateUtil.localDateStringToLocalDate(paymentDate), DateUtil.localTimeStringToLocalDate(paymentTime));
+            return new PaymentAdapter(clientId, value, DateUtil.rawStringToLocalDate(paymentDate), DateUtil.rawStringToLocalTime(paymentTime));
         }
 
     }

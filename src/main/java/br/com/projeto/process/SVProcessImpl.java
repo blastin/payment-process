@@ -36,8 +36,8 @@ final class SVProcessImpl extends FileProcessImpl {
             return new PaymentAdapter(
                     Integer.valueOf(payments[CLIENT_ID]),
                     new BigDecimal(payments[PAYMENT]),
-                    DateUtil.localDateStringToLocalDate(payments[PAYMENT_DATE]),
-                    DateUtil.localTimeStringToLocalDate(payments[PAYMENT_TIME]));
+                    DateUtil.rawStringToLocalDate(payments[PAYMENT_DATE]),
+                    DateUtil.rawStringToLocalTime(payments[PAYMENT_TIME]));
 
         }).collect(Collectors.toList());
 

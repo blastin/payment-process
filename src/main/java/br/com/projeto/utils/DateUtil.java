@@ -19,7 +19,7 @@ public final class DateUtil {
      * @param localDateString local date in format string
      * @return LocalDate
      */
-    public static LocalDate localDateStringToLocalDate(final String localDateString) {
+    public static LocalDate rawStringToLocalDate(final String localDateString) {
         return LocalDate.parse(localDateString, DateTimeFormatter.ofPattern(PATTERN_LOCAL_DATE));
     }
 
@@ -29,7 +29,7 @@ public final class DateUtil {
      * @param localTimeString time in format string
      * @return LocalTime
      */
-    public static LocalTime localTimeStringToLocalDate(final String localTimeString) {
+    public static LocalTime rawStringToLocalTime(final String localTimeString) {
         return LocalTime.parse(localTimeString, DateTimeFormatter.ofPattern(PATTERN_LOCAL_TIME));
     }
 

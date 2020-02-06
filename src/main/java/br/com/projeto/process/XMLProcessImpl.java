@@ -51,8 +51,8 @@ final class XMLProcessImpl extends FileProcessImpl {
                 final PaymentAdapter paymentAdapter = new PaymentAdapter(
                         Integer.valueOf(element.getElementsByTagName(CLIENT_ID).item(0).getTextContent()),
                         new BigDecimal(element.getElementsByTagName(PAYMENT).item(0).getTextContent()),
-                        DateUtil.localDateStringToLocalDate(element.getElementsByTagName(PAYMENT_DATE).item(0).getTextContent()),
-                        DateUtil.localTimeStringToLocalDate(element.getElementsByTagName(PAYMENT_TIME).item(0).getTextContent())
+                        DateUtil.rawStringToLocalDate(element.getElementsByTagName(PAYMENT_DATE).item(0).getTextContent()),
+                        DateUtil.rawStringToLocalTime(element.getElementsByTagName(PAYMENT_TIME).item(0).getTextContent())
                 );
 
                 paymentAdapters.add(paymentAdapter);
