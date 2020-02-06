@@ -5,12 +5,9 @@ import br.com.projeto.payment.Payments;
 import br.com.projeto.utils.DateUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.annotations.SerializedName;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -19,8 +16,6 @@ final class JsonProcessImpl extends FileProcessImpl {
 
     private static final Gson GSON =
             new GsonBuilder()
-                    .registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (jsonElement, type, jsonDeserializationContext) -> DateUtil.rawStringToLocalDate(jsonElement.toString()))
-                    .registerTypeAdapter(LocalTime.class, (JsonDeserializer<LocalTime>) (jsonElement, type, jsonDeserializationContext) -> DateUtil.rawStringToLocalTime(jsonElement.toString()))
                     .create();
 
     protected JsonProcessImpl(final Payments payments) {
