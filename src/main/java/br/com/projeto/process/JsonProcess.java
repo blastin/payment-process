@@ -12,13 +12,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-final class JsonProcessImpl extends FileProcessImpl {
+final class JsonProcess extends FileProcessImpl {
 
     private static final Gson GSON =
             new GsonBuilder()
                     .create();
 
-    protected JsonProcessImpl(final Payments payments) {
+    protected JsonProcess(final Payments payments) {
         super(payments);
     }
 

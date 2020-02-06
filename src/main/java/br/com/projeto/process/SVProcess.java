@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-final class SVProcessImpl extends FileProcessImpl {
+final class SVProcess extends FileProcessImpl {
 
     private static final String NEW_LINE = "\n";
     private static final int CLIENT_ID = 0;
@@ -19,7 +19,7 @@ final class SVProcessImpl extends FileProcessImpl {
 
     private final String delimiter;
 
-    SVProcessImpl(final Payments payments, final String delimiter) {
+    SVProcess(final Payments payments, final String delimiter) {
         super(payments);
         this.delimiter = delimiter;
     }

@@ -31,25 +31,25 @@ public final class FileProcessFactory {
         JSON(".*.(json)$") {
             @Override
             FileProcess get(final Payments payments) {
-                return new JsonProcessImpl(payments);
+                return new JsonProcess(payments);
             }
         },
         CSV(".*.(csv)$") {
             @Override
             FileProcess get(final Payments payments) {
-                return new SVProcessImpl(payments, ",");
+                return new SVProcess(payments, ",");
             }
         },
         TSV(".*.(tsv)$") {
             @Override
             FileProcess get(final Payments payments) {
-                return new SVProcessImpl(payments, "\t");
+                return new SVProcess(payments, "\t");
             }
         },
         XML(".*.(xml)$") {
             @Override
             FileProcess get(final Payments payments) {
-                return new XMLProcessImpl(payments);
+                return new XMLProcess(payments);
             }
         };
 

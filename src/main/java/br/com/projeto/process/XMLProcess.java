@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 
-final class XMLProcessImpl extends FileProcessImpl {
+final class XMLProcess extends FileProcessImpl {
 
     private static final String ROOT = "record";
     private static final String CLIENT_ID = "id_cliente";
@@ -25,7 +25,7 @@ final class XMLProcessImpl extends FileProcessImpl {
     private static final String PAYMENT_DATE = "data";
     private static final String PAYMENT_TIME = "horario";
 
-    XMLProcessImpl(final Payments payments) {
+    XMLProcess(final Payments payments) {
         super(payments);
     }
 
