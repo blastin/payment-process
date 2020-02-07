@@ -1,11 +1,10 @@
 package br.com.projeto.process;
 
+import br.com.projeto.functions.FunctionalMap;
 import br.com.projeto.payment.PaymentAdapter;
 import br.com.projeto.payment.Payments;
 import br.com.projeto.process.xml.document.DocumentFactory;
 import br.com.projeto.process.xml.document.DocumentWrapper;
-import br.com.projeto.utils.ElementMap;
-import br.com.projeto.functions.FunctionalMap;
 import br.com.projeto.utils.DateUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -53,4 +52,31 @@ final class XMLProcess extends FileProcessImpl {
                         DateUtil.rawStringToLocalTime(element.getElementsByTagName(PAYMENT_TIME).item(0).getTextContent()));
 
     }
+
+    private static class ElementMap extends FunctionalMap<Element> {
+
+        private final NodeList nodeList;
+
+        private final int length;
+
+        private int currentIndex;
+
+        public ElementMap(NodeList nodeList) {
+            this.nodeList = nodeList;
+            length = nodeList.getLength();
+            currentIndex = 0;
+        }
+
+        @Override
+        protected boolean hasNext() {
+            return currentIndex < length;
+        }
+
+        @Override
+        protected Element next() {
+            return (Element) nodeList.item(currentIndex++);
+        }
+
+    }
+    
 }
