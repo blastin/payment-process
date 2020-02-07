@@ -29,17 +29,19 @@ final class SVProcess extends FileProcessImpl {
 
         final String[] strings = rawStringFile.split(NEW_LINE);
 
-        return Arrays.stream(strings).map(line -> {
+        return Arrays.stream(strings).map(this::buildPayment).collect(Collectors.toList());
 
-            final String[] payments = line.split(delimiter);
+    }
 
-            return new PaymentAdapter(
-                    Integer.valueOf(payments[CLIENT_ID]),
-                    new BigDecimal(payments[PAYMENT]),
-                    DateUtil.rawStringToLocalDate(payments[PAYMENT_DATE]),
-                    DateUtil.rawStringToLocalTime(payments[PAYMENT_TIME]));
+    private PaymentAdapter buildPayment(final String line) {
 
-        }).collect(Collectors.toList());
+        final String[] payments = line.split(delimiter);
+
+        return new PaymentAdapter(
+                Integer.valueOf(payments[CLIENT_ID]),
+                new BigDecimal(payments[PAYMENT]),
+                DateUtil.rawStringToLocalDate(payments[PAYMENT_DATE]),
+                DateUtil.rawStringToLocalTime(payments[PAYMENT_TIME]));
 
     }
 
