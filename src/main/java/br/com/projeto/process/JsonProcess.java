@@ -24,7 +24,7 @@ final class JsonProcess extends FileProcessImpl {
 
     @Override
     public Collection<PaymentAdapter> process(final String rawStringFile) {
-        return Arrays.stream(GSON.fromJson(rawStringFile, JsonPaymentAdapter[].class)).map(JsonPaymentAdapter::build).collect(Collectors.toList());
+        return Arrays.stream(GSON.fromJson(rawStringFile, JsonPaymentAdapter[].class)).map(JsonPaymentAdapter::build).collect(Collectors.toSet());
     }
 
     private static class JsonPaymentAdapter {

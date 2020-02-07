@@ -18,6 +18,7 @@ final class Payment implements Payments {
         return paymentAdapters
                 .stream()
                 .collect(Collectors.toMap(PaymentAdapter::getClientId, PaymentAdapter::getValue, BigDecimal::add));
+
     }
 
 }

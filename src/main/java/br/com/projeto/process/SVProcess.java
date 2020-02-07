@@ -29,7 +29,7 @@ final class SVProcess extends FileProcessImpl {
 
         final String[] strings = rawStringFile.split(NEW_LINE);
 
-        return Arrays.stream(strings).map(this::buildPayment).collect(Collectors.toList());
+        return Arrays.stream(strings).map(this::buildPayment).collect(Collectors.toSet());
 
     }
 

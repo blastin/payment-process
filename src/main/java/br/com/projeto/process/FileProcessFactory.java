@@ -17,7 +17,7 @@ public final class FileProcessFactory {
                         .filter(typeFile -> fileName.matches(typeFile.regex))
                         .findFirst()
                         .orElseThrow(() -> new RuntimeException("Type File not found"))
-                        .get(payments);
+                        .getInstance(payments);
 
         return new FileProcessProxy(instance);
 
@@ -30,25 +30,25 @@ public final class FileProcessFactory {
 
         JSON(".*.(json)$") {
             @Override
-            FileProcess get(final Payments payments) {
+            FileProcess getInstance(final Payments payments) {
                 return new JsonProcess(payments);
             }
         },
         CSV(".*.(csv)$") {
             @Override
-            FileProcess get(final Payments payments) {
+            FileProcess getInstance(final Payments payments) {
                 return new SVProcess(payments, ",");
             }
         },
         TSV(".*.(tsv)$") {
             @Override
-            FileProcess get(final Payments payments) {
+            FileProcess getInstance(final Payments payments) {
                 return new SVProcess(payments, "\t");
             }
         },
         XML(".*.(xml)$") {
             @Override
-            FileProcess get(final Payments payments) {
+            FileProcess getInstance(final Payments payments) {
                 return new XMLProcess(payments);
             }
         };
@@ -59,7 +59,7 @@ public final class FileProcessFactory {
             this.regex = regex;
         }
 
-        abstract FileProcess get(final Payments payments);
+        abstract FileProcess getInstance(final Payments payments);
 
     }
 
