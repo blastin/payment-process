@@ -4,6 +4,6 @@ import org.w3c.dom.Document;
 
 public interface DocumentWrapper {
 
-    Document builder(String rawString);
+    Document builder(final String rawString);
 
 }

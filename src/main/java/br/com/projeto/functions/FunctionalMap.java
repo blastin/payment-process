@@ -8,7 +8,7 @@ import java.util.stream.Stream;
  */
 public abstract class FunctionalMap<E> {
 
-    public final <T> Stream<T> map(Function<E, T> function){
+    public final <T> Stream<T> map(final Function<E, T> function){
 
         final Stream.Builder<T> builder = Stream.builder();
 

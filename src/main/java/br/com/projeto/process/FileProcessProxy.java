@@ -15,7 +15,7 @@ final class FileProcessProxy implements FileProcess {
     }
 
     @Override
-    public Map<Integer, BigDecimal> rawStringFileToClientMapByTotalPayment(String rawStringFile) {
+    public Map<Integer, BigDecimal> rawStringFileToClientMapByTotalPayment(final String rawStringFile) {
         return fileProcess.rawStringFileToClientMapByTotalPayment(rawStringFile);
     }
 

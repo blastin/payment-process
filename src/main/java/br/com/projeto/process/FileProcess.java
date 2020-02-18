@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface FileProcess {
 
-    Map<Integer, BigDecimal> rawStringFileToClientMapByTotalPayment(String rawStringFile);
+    Map<Integer, BigDecimal> rawStringFileToClientMapByTotalPayment(final String rawStringFile);
 
-    Collection<PaymentAdapter> process(String rawStringFile);
+    Collection<PaymentAdapter> process(final String rawStringFile);
 }

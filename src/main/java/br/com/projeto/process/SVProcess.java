@@ -5,13 +5,11 @@ import br.com.projeto.payment.Payments;
 import br.com.projeto.utils.DateUtil;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
 final class SVProcess extends FileProcessImpl {
 
-    private static final String NEW_LINE = "\n";
     private static final int CLIENT_ID = 0;
     private static final int PAYMENT = 1;
     private static final int PAYMENT_DATE = 2;
@@ -25,11 +23,9 @@ final class SVProcess extends FileProcessImpl {
     }
 
     @Override
-    public Collection<PaymentAdapter> process(String rawStringFile) {
+    public Collection<PaymentAdapter> process(final String rawStringFile) {
 
-        final String[] strings = rawStringFile.split(NEW_LINE);
-
-        return Arrays.stream(strings).map(this::buildPayment).collect(Collectors.toSet());
+        return rawStringFile.lines().map(this::buildPayment).collect(Collectors.toSet());
 
     }
 

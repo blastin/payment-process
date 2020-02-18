@@ -42,7 +42,7 @@ final class XMLProcess extends FileProcessImpl {
 
     }
 
-    private PaymentAdapter build(Element element) {
+    private PaymentAdapter build(final Element element) {
 
         return
                 new PaymentAdapter(
@@ -61,7 +61,7 @@ final class XMLProcess extends FileProcessImpl {
 
         private int currentIndex;
 
-        public ElementMap(NodeList nodeList) {
+        public ElementMap(final NodeList nodeList) {
             this.nodeList = nodeList;
             length = nodeList.getLength();
             currentIndex = 0;
@@ -78,5 +78,5 @@ final class XMLProcess extends FileProcessImpl {
         }
 
     }
-    
+
 }

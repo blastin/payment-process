@@ -8,6 +8,6 @@ package br.com.projeto.functions;
 @FunctionalInterface
 public interface Function<E, T> {
 
-    T action(E e);
+    T action(final E e);
 
 }

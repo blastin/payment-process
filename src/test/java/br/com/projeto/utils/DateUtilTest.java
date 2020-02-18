@@ -15,7 +15,7 @@ public class DateUtilTest {
     }
 
     @Test
-    public void whenLocalTimeisConstructedByRawString() {
+    public void whenLocalTimeIsConstructedByRawString() {
         final String localTime = "10:20:00";
         Assert.assertEquals("Should return object LocalTime equals", LocalTime.of(10, 20, 0), DateUtil.rawStringToLocalTime(localTime));
     }
